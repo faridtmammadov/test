@@ -2,7 +2,7 @@ name: caption care main
 version: 1.0.0
 ambience:
   use:
-  - calendar
+  - calendars
   - references
   abide:
   - traditional
