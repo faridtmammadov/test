@@ -1,15 +1,100 @@
-# Employee records
-- martin:
-    name: Martin D'vloper
-    job: Developer
-    skills:
-      - python
-      - perl
-      - pascal
-- tabitha:
-    name: Tabitha Bitumen
-    job: Developer
-    skills:
-      - lisp
-      - fortran
-      - erlang
+name: caption care main
+version: 1.0.0
+ambience:
+  use:
+  - calendar
+  - references
+  abide:
+  - traditional
+  - star
+entities:
+  clinic:
+    flavor:
+    - dim
+    - scd-type-1
+    schema: encounters
+    resembles:
+    - business entity #address etc
+    intake:
+      - name: ccp #needs to go up
+    attributes:
+      reference_model_id:
+        type: uuid
+        nullable: false
+      code:
+        type: string
+        max: 64
+        nullable: false
+      display_name:
+        type: string
+        max: 50
+        nullable: false
+      is_deleted:
+        type: bool
+        nullable: false    
+  patient:
+    flavor: 
+    - dim
+    - scd-type-1
+    schema: encounters        
+    resembles: 
+    - human
+    attributes:
+      person_model_id:
+        type: uuid
+        nullable: false
+      phone:
+        type: string
+        max: 15
+        nullable: false
+      address_street1:
+        type: string
+        max: 100
+        nullable: false
+      address_street2:
+        type: string
+        max: 100
+        nullable: false
+      address_street3:
+        type: string
+        max: 100
+        nullable: false
+      address_street4:
+        type: string
+        max: 100
+        nullable: false
+      address_street5:
+        type: string
+        max: 100
+        nullable: false
+      address_city:
+        type: string
+        max: 32
+        nullable: false
+      address_state:
+        type: string
+        max: 32
+        nullable: false
+      address_postal_code:
+        type: string
+        max: 16
+        nullable: false
+      address_country_code:
+        type: string
+        max: 64
+        nullable: false
+      timezone:
+        type: string
+        max: 50
+        nullable: false
+      profile_patient_id:
+        type: string
+        max: 50
+        nullable: false
+      profile_patient_id_issuer:
+        type: string
+        max: 50
+        nullable: false
+      is_deleted:
+        type: bool
+        nullable: false       
