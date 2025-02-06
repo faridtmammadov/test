@@ -139,7 +139,7 @@ entities:
       is_deleted:
         type: bool
         nullable: false       
-  patient pii:
+  patientPii:
     flavor: 
     - dim
     - scd-type-1
