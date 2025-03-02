@@ -13,12 +13,10 @@ entities:
     - dim
     - scd-type-1
     schema: encounters
-    resembles:
-    - business entity #address etc
     intake:
       - name: ccp #needs to go up
     attributes:
-      reference_model_id:
+      clinic_id:
         type: uuid
         nullable: false
       code:
@@ -38,16 +36,9 @@ entities:
     - scd-type-1
     schema: encounters
     attributes:
-      order_model_id:
-        type: uuid
-        nullable: false
       order_id:
         type: string
         max: 16
-        nullable: false
-      ordered_by_id:
-        type: string
-        max: 64
         nullable: false
       patient_weight_kg:
         type: decimal
@@ -77,11 +68,9 @@ entities:
     flavor: 
     - dim
     - scd-type-1
-    schema: encounters        
-    resembles: 
-    - human
+    schema: encounters  
     attributes:
-      person_model_id:
+      patient_id:
         type: uuid
         nullable: false
       phone:
@@ -128,10 +117,6 @@ entities:
         type: string
         max: 50
         nullable: false
-      profile_patient_id:
-        type: string
-        max: 50
-        nullable: false
       profile_patient_id_issuer:
         type: string
         max: 50
@@ -139,14 +124,14 @@ entities:
       is_deleted:
         type: bool
         nullable: false       
-  patientPii:
+  patientpii:
     flavor: 
     - dim
     - scd-type-1
     - pii host
     schema: encounters
     attributes:
-      person_model_id:
+      patientpii_id:
         type: uuid
         nullable: false
       first_name:
@@ -183,6 +168,9 @@ entities:
     - fact
     schema: encounters
     attributes:
+      encounter_id:
+        type: uuid
+        nullable: false
       order_status:
         type: string
         max: 50
