@@ -1,0 +1,339 @@
+name: pcm_sales_portal
+version: 1.0.0
+entities:
+  orders:
+    attributes:
+      order_no:
+        type: id
+        nullable: false
+      order_type_id:
+        type: id
+        nullable: false
+      reference_no:
+        type: string
+        max: 100
+        nullable: true
+      revision_no:
+        type: integer
+        nullable: false
+      customer_po:
+        type: string
+        max: 100
+        nullable: true
+      description:
+        type: string
+        max: 500
+        nullable: true
+      comments:
+        type: string
+        max: 4000
+        nullable: true
+      customer_id:
+        type: id
+        nullable: true
+      contact_id:
+        type: id
+        nullable: true
+      project_no:
+        type: id
+        nullable: true
+      job_no:
+        type: id
+        nullable: true
+      order_date:
+        type: date
+        nullable: false
+      effective_date:
+        type: date
+        nullable: false
+      expiry_date:
+        type: date
+        nullable: false
+      from_customer_id:
+        type: id
+        nullable: false
+      from_contact_id:
+        type: id
+        nullable: false
+      create_customer_id:
+        type: id
+        nullable: false
+      create_contact_id:
+        type: id
+        nullable: false
+      credit_term_notes:
+        type: string
+        max: 500
+        nullable: true
+      payment_type_id:
+        type: id
+        nullable: true
+      payment_term_id:
+        type: id
+        nullable: true
+      currency_id:
+        type: id
+        nullable: false
+      carrier_id:
+        type: id
+        nullable: true
+      shipping_method_id:
+        type: id
+        nullable: true
+      shipping_policy_id:
+        type: id
+        nullable: true
+      freight_id:
+        type: id
+        nullable: true
+      requested_ship_date:
+        type: date
+        nullable: true
+      is_read_only:
+        type: bool
+        nullable: false
+      subtotal_amount:
+        type: decimal
+        nullable: false
+      discount_rate:
+        type: decimal
+        nullable: true
+      discount_amount:
+        type: decimal
+        nullable: false
+      markup_rate:
+        type: decimal
+        nullable: true
+      markup_amount:
+        type: decimal
+        nullable: false
+      additional_discount_rate:
+        type: decimal
+        nullable: false
+      additional_discount_amount:
+        type: decimal
+        nullable: true
+      tax_rate:
+        type: decimal
+        nullable: true
+      tax_amount:
+        type: decimal
+        nullable: false
+      shipping_handling_amount:
+        type: decimal
+        nullable: true
+      other_charges_amount:
+        type: decimal
+        nullable: true
+      total_amount:
+        type: decimal
+        nullable: false
+      deleted:
+        type: bool
+        nullable: false
+      status:
+        type: string
+        max: 50
+        nullable: false
+      in_use:
+        type: bool
+        nullable: false
+      create_date:
+        type: datetime
+        nullable: false
+      create_user:
+        type: string
+        max: 128
+        nullable: true
+      maintenance_date:
+        type: datetime
+        nullable: false
+      maintenance_user:
+        type: string
+        max: 128
+        nullable: true
+      in_workflow:
+        type: bool
+        nullable: false
+      sync_status:
+        type: int
+        nullable: false
+      discount_mode:
+        type: int
+        nullable: false
+      upcharge_mode:
+        type: int
+        nullable: false
+      price_display_mode:
+        type: int
+        nullable: false
+      state:
+        type: int
+        nullable: false
+      dealer_exchange_rate:
+        type: decimal
+        nullable: false
+      customer_exchange_rate:
+        type: decimal
+        nullable: false
+      version_no:
+        type: smallint
+        nullable: false
+      display_order_no:
+        type: id
+        nullable: false
+      is_complete:
+        type: bool
+        nullable: false
+      labor_tax_rate:
+        type: decimal
+        nullable: true
+      labor_tax_amount:
+        type: decimal
+        nullable: false
+
+  orderdetails:
+    attributes:
+      order_no:
+        type: id
+        nullable: false
+      order_type_id:
+        type: id
+        nullable: false
+      line_no:
+        type: int
+        nullable: false
+      manufacturer_id:
+        type: id
+        nullable: false
+      part_name:
+        type: string
+        max: 100
+        nullable: true
+      part_number:
+        type: string
+        max: 100
+        nullable: false
+      type:
+        type: int
+        nullable: false
+      description:
+        type: string
+        max: 500
+        nullable: true
+      label:
+        type: string
+        max: 100
+        nullable: true
+      quantity:
+        type: decimal
+        nullable: false
+      uom:
+        type: string
+        max: 50
+        nullable: true
+      unit_price:
+        type: decimal
+        nullable: false
+      line_status:
+        type: int
+        nullable: false
+      extended_price:
+        type: decimal
+        nullable: false
+      discount_rate:
+        type: decimal
+        nullable: false
+      discount_amount:
+        type: decimal
+        nullable: false
+      markup_amount:
+        type: decimal
+        nullable: false
+      markup_rate:
+        type: decimal
+        nullable: false
+      subtotal_amount:
+        type: decimal
+        nullable: false
+      status:
+        type: int
+        nullable: false
+      configurable_item:
+        type: bool
+        nullable: false
+      is_read_only:
+        type: bool
+        nullable: false
+      create_date:
+        type: datetime
+        nullable: false
+      create_user:
+        type: string
+        max: 128
+        nullable: true
+      maintenance_date:
+        type: datetime
+        nullable: false
+      maintenance_user:
+        type: string
+        max: 128
+        nullable: true
+      deleted:
+        type: bool
+        nullable: false
+      in_use:
+        type: bool
+        nullable: false
+
+  bdcconfigurations:
+    attributes:
+      header_id:
+        type: string
+        max: 60
+        nullable: false
+      detail_id:
+        type: string
+        max: 60
+        nullable: false
+      input_xml:
+        type: xml
+        nullable: true
+      output_xml:
+        type: xml
+        nullable: true
+      inprogress_input_xml:
+        type: xml
+        nullable: true
+      inprogress_output_xml:
+        type: xml
+        nullable: true
+      component_data:
+        type: xml
+        nullable: true
+      mfg_data:
+        type: xml
+        nullable: true
+      ui_data:
+        type: xml
+        nullable: true
+      integration_data:
+        type: xml
+        nullable: true
+      is_partial:
+        type: bool
+        nullable: true
+      resource_path_root:
+        type: string
+        max: 500
+        nullable: true
+      resource_link_root:
+        type: string
+        max: 500
+        nullable: true
+      create_date:
+        type: datetime
+        nullable: true
+      maintenance_date:
+        type: datetime
+        nullable: true
