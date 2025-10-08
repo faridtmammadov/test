@@ -1,5 +1,12 @@
 name: pcm_sales_portal
 version: 1.0.0
+ambience:
+  use:
+  - calendar
+  - references
+  abide:
+  - traditional
+  - star
 entities:
   orders:
     attributes:
