@@ -8,13 +8,16 @@ ambience:
   - traditional
   - star
 entities:
-  orders:
+  order:
     attributes:
+      order_id:
+        type: uuid
+        nullable: false
       order_no:
-        type: id
+        type: uuid
         nullable: false
       order_type_id:
-        type: id
+        type: uuid
         nullable: false
       reference_no:
         type: string
@@ -36,16 +39,16 @@ entities:
         max: 4000
         nullable: true
       customer_id:
-        type: id
+        type: uuid
         nullable: true
       contact_id:
-        type: id
+        type: uuid
         nullable: true
       project_no:
-        type: id
+        type: uuid
         nullable: true
       job_no:
-        type: id
+        type: uuid
         nullable: true
       order_date:
         type: date
@@ -57,41 +60,41 @@ entities:
         type: date
         nullable: false
       from_customer_id:
-        type: id
+        type: uuid
         nullable: false
       from_contact_id:
-        type: id
+        type: uuid
         nullable: false
       create_customer_id:
-        type: id
+        type: uuid
         nullable: false
       create_contact_id:
-        type: id
+        type: uuid
         nullable: false
       credit_term_notes:
         type: string
         max: 500
         nullable: true
       payment_type_id:
-        type: id
+        type: uuid
         nullable: true
       payment_term_id:
-        type: id
+        type: uuid
         nullable: true
       currency_id:
-        type: id
+        type: uuid
         nullable: false
       carrier_id:
-        type: id
+        type: uuid
         nullable: true
       shipping_method_id:
-        type: id
+        type: uuid
         nullable: true
       shipping_policy_id:
-        type: id
+        type: uuid
         nullable: true
       freight_id:
-        type: id
+        type: uuid
         nullable: true
       requested_ship_date:
         type: date
@@ -184,10 +187,10 @@ entities:
         type: decimal
         nullable: false
       version_no:
-        type: smallint
+        type: int
         nullable: false
       display_order_no:
-        type: id
+        type: uuid
         nullable: false
       is_complete:
         type: bool
@@ -199,19 +202,25 @@ entities:
         type: decimal
         nullable: false
 
-  orderdetails:
+  orderdetail:
     attributes:
+      orderdetail_id:
+        type: uuid
+        nullable: false
+      order:
+        type: order
+        nullable: false
       order_no:
-        type: id
+        type: uuid
         nullable: false
       order_type_id:
-        type: id
+        type: uuid
         nullable: false
       line_no:
         type: int
         nullable: false
       manufacturer_id:
-        type: id
+        type: uuid
         nullable: false
       part_name:
         type: string
@@ -295,37 +304,43 @@ entities:
 
   bdcconfigurations:
     attributes:
+      bdcconfigurations_id:
+        type: uuid
+        nullable: false
       header_id:
         type: string
         max: 60
+        nullable: false
+      order_detail:
+        type: orderdetail
         nullable: false
       detail_id:
         type: string
         max: 60
         nullable: false
       input_xml:
-        type: xml
+        type: string
         nullable: true
       output_xml:
-        type: xml
+        type: string
         nullable: true
       inprogress_input_xml:
-        type: xml
+        type: string
         nullable: true
       inprogress_output_xml:
-        type: xml
+        type: string
         nullable: true
       component_data:
-        type: xml
+        type: string
         nullable: true
       mfg_data:
-        type: xml
+        type: string
         nullable: true
       ui_data:
-        type: xml
+        type: string
         nullable: true
       integration_data:
-        type: xml
+        type: string
         nullable: true
       is_partial:
         type: bool
