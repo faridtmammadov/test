@@ -8,4 +8,320 @@ ambience:
   - traditional
   - star
 entities:
-  clinic:yrdy
+  part:
+    schema: encounters
+    attributes:
+      part_id:
+        type: uuid
+        nullable: false
+      PartNumber:
+        type: string
+        max: 64
+        nullable: false
+      Description:
+        type: string
+        max: 256
+        nullable: false
+      MfgList:
+        type: string
+        max: 64
+        nullable: false
+      SessionID:
+        type: string
+        max: 64
+        nullable: false
+      ConfigurationID:
+        type: string
+        max: 64
+        nullable: false
+      is_deleted:
+        type: bool
+        nullable: false
+
+  order:
+    schema: encounters
+    attributes:
+      order_id:
+        type: uuid
+        nullable: false
+      OrderNo:
+        type: string
+        max: 50
+        nullable: false
+      Order_SubtotalAmount:
+        type: decimal
+        nullable: false
+      Order_DiscountAmount:
+        type: decimal
+        nullable: false
+      Order_DiscountRate:
+        type: decimal
+        nullable: false
+      Order_MarkupRate:
+        type: decimal
+        nullable: false
+      Order_MarkupAmount:
+        type: decimal
+        nullable: false
+      Order_AdditionalDiscountAmount:
+        type: decimal
+        nullable: false
+      Order_AdditionalDiscountRate:
+        type: decimal
+        nullable: false
+      Order_TaxRate:
+        type: decimal
+        nullable: false
+      Order_TaxAmount:
+        type: decimal
+        nullable: false
+      Order_ShippingHandlingAmount:
+        type: decimal
+        nullable: false
+      Order_OtherChargesAmount:
+        type: decimal
+        nullable: false
+      Order_TotalAmount:
+        type: decimal
+        nullable: false
+      Status:
+        type: string
+        max: 50
+        nullable: false
+      MfgList:
+        type: string
+        max: 64
+        nullable: false
+      SessionID:
+        type: string
+        max: 64
+        nullable: false
+      ConfigurationID:
+        type: string
+        max: 64
+        nullable: false
+      is_deleted:
+        type: bool
+        nullable: false
+
+  orderline:
+    schema: encounters
+    attributes:
+      orderline_id:
+        type: uuid
+        nullable: false
+      OrderNo:
+        type: string
+        max: 50
+        nullable: false
+      LineNo:
+        type: int
+        nullable: false
+      CreateDate:
+        type: date
+        nullable: false
+      PartNumber:
+        type: string
+        max: 64
+        nullable: false
+      Quantity:
+        type: int
+        nullable: false
+      UnitPrice:
+        type: decimal
+        nullable: false
+      OrderDetails_ExtendedPrice_QuantityTimesUnitPrice:
+        type: decimal
+        nullable: false
+      DiscountRate:
+        type: decimal
+        nullable: false
+      DiscountAmount:
+        type: decimal
+        nullable: false
+      MarkupAmount:
+        type: decimal
+        nullable: false
+      MarkupRate:
+        type: decimal
+        nullable: false
+      SubTotalAmount:
+        type: decimal
+        nullable: false
+      AdditionalDiscountRate:
+        type: decimal
+        nullable: false
+      AdditionalDiscountAmount:
+        type: decimal
+        nullable: false
+      OrderTypeID:
+        type: string
+        max: 32
+        nullable: false
+      ConfigurableItem:
+        type: string
+        max: 64
+        nullable: false
+      ConfigurationID:
+        type: string
+        max: 64
+        nullable: false
+      SessionID:
+        type: string
+        max: 64
+        nullable: false
+      is_deleted:
+        type: bool
+        nullable: false
+
+  ordercomponent:
+    schema: encounters
+    attributes:
+      ordercomponent_id:
+        type: uuid
+        nullable: false
+      HeaderId:
+        type: string
+        max: 64
+        nullable: false
+      DetailId:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_ConfiguredPrice:
+        type: decimal
+        nullable: false
+      ComponentData_UsersMarket:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_selCountry:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_npshr:
+        type: decimal
+        nullable: false
+      ComponentData_npsha:
+        type: decimal
+        nullable: false
+      ComponentData_Flow:
+        type: decimal
+        nullable: false
+      ComponentData_FlowUnit:
+        type: string
+        max: 32
+        nullable: false
+      ComponentData_Head:
+        type: decimal
+        nullable: false
+      ComponentData_PressureUnit:
+        type: string
+        max: 32
+        nullable: false
+      ComponentData_designDutyFlow:
+        type: decimal
+        nullable: false
+      ComponentData_designDutyHead:
+        type: decimal
+        nullable: false
+      ComponentData_impellerDia:
+        type: decimal
+        nullable: false
+      ComponentData_bepFlow:
+        type: decimal
+        nullable: false
+      ComponentData_bepHead:
+        type: decimal
+        nullable: false
+      ComponentData_Qty:
+        type: int
+        nullable: false
+      ComponentData_PowerSupply:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_MotorSize:
+        type: decimal
+        nullable: false
+      ComponentData_MotorSpeed:
+        type: decimal
+        nullable: false
+      ComponentData_MotorStandard:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_ItemQty:
+        type: int
+        nullable: false
+      ComponentData_EnvelopeNumber:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_PumpSeries:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_PumpSize:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_PumpCategory:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_BHP:
+        type: decimal
+        nullable: false
+      ComponentData_pumpType:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_designEnvelopeModelNum:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData_pumpOperatingCost:
+        type: decimal
+        nullable: false
+      ComponentData_TotalItemCost:
+        type: decimal
+        nullable: false
+      MfgData_ConfiguredPrice:
+        type: decimal
+        nullable: false
+      Parts:
+        type: string
+        max: 64
+        nullable: false
+      MfgData:
+        type: string
+        max: 64
+        nullable: false
+      ComponentData:
+        type: string
+        max: 64
+        nullable: false
+      InputXml:
+        type: string
+        max: 512
+        nullable: false
+      IntegrationData:
+        type: string
+        max: 512
+        nullable: false
+      OutputXml:
+        type: string
+        max: 512
+        nullable: false
+      UiData:
+        type: string
+        max: 512
+        nullable: false
+      OrderVId:
+        type: string
+        max: 64
+        nullable: false
+      is_deleted:
+        type: bool
+        nullable: false
